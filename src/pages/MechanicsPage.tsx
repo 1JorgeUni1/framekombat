@@ -61,28 +61,28 @@ export default function MechanicsPage() {
   }, [active, q])
 
   return (
-    <section>
+    <section className="px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 max-w-[1200px] mx-auto">
       <h2 className="text-3xl font-bold mb-4">Mechanics — Guía rápida</h2>
 
-      <div className="mb-4 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+      <div className="mb-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
         <div className="flex items-center gap-2 overflow-auto">
           {categories.map((c) => (
             <button
               key={c}
               onClick={() => setActive(c)}
-              className={`px-3 py-1 rounded-md ${active === c ? 'bg-[var(--mk-red)] text-black font-semibold' : 'bg-[var(--card)] text-slate-200'}`}
+              className={`px-3 py-1 rounded-md whitespace-nowrap ${active === c ? 'bg-[var(--mk-red)] text-black font-semibold' : 'bg-[var(--card)] text-slate-200'}`}
             >
               {c}
             </button>
           ))}
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 w-full sm:w-auto">
           <input
             value={q}
             onChange={(e) => setQ(e.target.value)}
             placeholder="Buscar mecánica..."
-            className="p-2 rounded bg-[var(--card)] border border-white/5 text-slate-100"
+            className="flex-1 sm:flex-none p-2 rounded bg-[var(--card)] border border-white/5 text-slate-100"
           />
           <button onClick={() => { setQ(''); setOpenId(null) }} className="px-3 py-1 rounded mk-nav-button">Limpiar</button>
         </div>
@@ -91,12 +91,12 @@ export default function MechanicsPage() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {list.map((m) => (
           <article key={m.id} className="p-4 mk-card rounded transform transition-all hover:scale-105">
-            <div className="flex items-start justify-between gap-3">
-              <div>
+            <div className="flex flex-col sm:flex-row items-start sm:justify-between gap-3">
+              <div className="flex-1">
                 <h3 className="font-semibold text-lg">{m.title}</h3>
                 <p className="text-sm text-slate-300 mt-1">{m.desc.slice(0, 120)}{m.desc.length > 120 ? '...' : ''}</p>
               </div>
-              <div className="flex flex-col items-end gap-2">
+              <div className="flex-shrink-0 flex items-start sm:items-end gap-2">
                 <button onClick={() => setOpenId((s) => (s === m.id ? null : m.id))} className="px-2 py-1 rounded bg-[var(--mk-red)] text-black">{openId === m.id ? 'Cerrar' : 'Ver'}</button>
               </div>
             </div>

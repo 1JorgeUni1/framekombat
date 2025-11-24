@@ -1,4 +1,5 @@
 import React from 'react'
+import Container from '../components/Container'
 import SonicFox from '../assets/SonicFox.jpg'
 import Rewind from '../assets/Rewind.jpg'
 import Raylakers from '../assets/Raylakers.jpg'
@@ -30,7 +31,8 @@ export default function ExtrasPage() {
 
   return (
     <section>
-      <h2 className="text-2xl font-bold mb-2">Extras — Comunidad y Recursos</h2>
+      <Container>
+        <h2 className="text-2xl font-bold mb-2">Extras — Comunidad y Recursos</h2>
 
       <div className="mb-6">
         <h3 className="font-semibold">Enlaces útiles</h3>
@@ -60,7 +62,7 @@ export default function ExtrasPage() {
 
       <div>
         <h3 className="font-semibold">Jugadores / Figuras reconocidas</h3>
-        <p className="text-sm text-slate-300">Fotos añadidas desde `src/assets`. Rellena las descripciones cuando quieras.</p>
+        <p className="text-sm text-slate-300">Jugadores y Host destacados en la escena de MKX .</p>
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-3">
           {personalities.map((p) => (
             <div key={p.id} className="p-3 bg-[var(--card)] rounded mk-elevated">
@@ -75,6 +77,7 @@ export default function ExtrasPage() {
           ))}
         </div>
       </div>
+      </Container>
     </section>
   )
 }

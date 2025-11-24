@@ -4,6 +4,7 @@ import { sampleMoves } from '../data/sampleFD'
 import { sampleCharacters } from '../data/characters'
 import { frameDataByCharacter, frameDataBios } from '../data/frameDataByCharacter'
 import FrameDataEditor from '../components/FrameDataEditor'
+import Container from '../components/Container'
 
 type Props = {
   selectedId?: string | null
@@ -14,6 +15,7 @@ export default function FrameDataPage({ selectedId }: Props) {
 
   return (
     <section>
+      <Container>
       {selected ? (
         <div className="mb-6 p-4 mk-elevated rounded-lg bg-blue-900">
           <div className="flex items-center gap-4">
@@ -48,6 +50,7 @@ export default function FrameDataPage({ selectedId }: Props) {
         : sampleMoves} />
 
       {selectedId && <FrameDataEditor characterId={selectedId} />}
+      </Container>
     </section>
   )
 }

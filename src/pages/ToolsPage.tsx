@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Container from '../components/Container'
 
 export default function ToolsPage() {
   const [oppRecovery, setOppRecovery] = useState<number | ''>('')
@@ -15,10 +16,11 @@ export default function ToolsPage() {
 
   return (
     <section>
-      <h2 className="text-2xl font-bold mb-3">Tools</h2>
-      <p className="text-slate-300 mb-4">Utilities to help test and calculate frame interactions. Notation used across tools: directions <strong>B/D/F/U</strong> and buttons <strong>1 2 3 4</strong> (1=□, 2=△, 3=✕, 4=○).</p>
+      <Container>
+        <h2 className="text-2xl font-bold mb-3">Tools</h2>
+        <p className="text-slate-300 mb-4">Utilities to help test and calculate frame interactions. Notation used across tools: directions <strong>B/D/F/U</strong> and buttons <strong>1 2 3 4</strong> (1=□, 2=△, 3=✕, 4=○).</p>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className="p-4 mk-card rounded">
           <div className="font-semibold mb-2">Frame Calculator</div>
           <div className="text-sm text-slate-300 mb-3">Calculador simple: dado el recovery del movimiento del oponente y el startup de tu movimiento, te dice si puedes castigar.</div>
@@ -43,7 +45,8 @@ export default function ToolsPage() {
           <div className="font-semibold">Blockstring Tester</div>
           <div className="text-sm text-slate-300">Simula cadenas y verifica frames. (Herramienta minimal por ahora)</div>
         </div>
-      </div>
+        </div>
+      </Container>
     </section>
   )
 }

@@ -24,7 +24,7 @@ export default function Navbar({ selected, onSelect }: Props) {
     <nav className="mk-navbar sticky top-0 z-40">
       <div className="w-full px-4">
         <div className="max-w-6xl mx-auto flex items-center justify-center">
-          <ul className="flex gap-4 py-3 justify-center">
+          <ul className="flex gap-4 py-3 justify-center overflow-auto no-scrollbar">
           {items.map((it) => (
             <li key={it.key}>
               <button

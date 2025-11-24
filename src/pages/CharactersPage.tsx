@@ -1,6 +1,7 @@
 import React, { useMemo, useState, useEffect } from 'react'
 import { sampleCharacters, type Character } from '../data/characters'
 import CharacterModal from '../components/CharacterModal'
+import Container from '../components/Container'
 
 type Props = {
   onSelectCharacter?: (c: Character) => void
@@ -41,7 +42,8 @@ export default function CharactersPage({ onSelectCharacter }: Props) {
 
   return (
     <section>
-      <h2 className="text-2xl font-bold mb-2">Characters</h2>
+      <Container>
+        <h2 className="text-2xl font-bold mb-2">Characters</h2>
       <div className="mb-4 flex gap-3 flex-col md:flex-row">
         <input
           value={q}
@@ -124,6 +126,7 @@ export default function CharactersPage({ onSelectCharacter }: Props) {
           if (onSelectCharacter && modalCharacter) onSelectCharacter(modalCharacter)
         }}
       />
+      </Container>
     </section>
   )
 }

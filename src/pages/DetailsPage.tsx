@@ -1,10 +1,12 @@
 import React from 'react'
+import Container from '../components/Container'
 
 export default function DetailsPage() {
   return (
     <section>
-      <h2 className="text-2xl font-bold mb-2">Mortal Kombat XL — Detalles</h2>
-      <div className="space-y-4 text-slate-300">
+      <Container>
+        <h2 className="text-2xl font-bold mb-2">Mortal Kombat XL — Detalles</h2>
+        <div className="space-y-4 text-slate-300">
         <section className="mk-card p-4 rounded">
           <h3 className="font-semibold">Versiones y Parches</h3>
           <p className="text-sm">Listado de versiones históricas relevantes para MKXL y notas resumidas de balance. Añade aquí cambios por parche, por ejemplo: mejoras/reducciones de prioridad, ajustes de daño o cambios a las propiedades de golpes especiales.</p>
@@ -42,7 +44,8 @@ export default function DetailsPage() {
             <li><a className="text-blue-300 underline" href="https://as.com/meristation/2015/04/14/guias/1429001820_144104.html" target="_blank" rel="noopener noreferrer">Guía de framedata (Meristation)</a> — recurso con explicación de conceptos y ejemplos útiles para interpretar framedata.</li>
           </ul>
         </section>
-      </div>
+        </div>
+      </Container>
     </section>
   )
 }
