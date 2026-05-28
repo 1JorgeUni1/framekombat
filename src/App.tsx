@@ -1,5 +1,5 @@
 ﻿import React, { useState } from "react"
-import logoSrc from './assets/MkFondo_Small.png'
+import logoSrc from './assets/MkFondo_Small.png' //hola como estan este es una prueba de cambio 
 import Navbar from './components/Navbar'
 import FrameDataPage from './pages/FrameDataPage'
 import DetailsPage from './pages/DetailsPage'
